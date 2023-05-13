@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="#" class="formsignUp" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <h3 class="title">Sign Up</h3>
+        <br>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" formControlName="username" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" formControlName="password" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="text" placeholder="Name" formControlName="nickname" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="Email" placeholder="Email" formControlName="email" />
+        </div>
+        <input type="submit" value="Sign Up" class="btn solid" />
+      </form>
+    </div>
+  </div>
+</div>

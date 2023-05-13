@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<header>
+    <ng-template ngxPermissionsOnly="home">
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Service</a>
+            <a href="#" routerLink="home/signup">Register</a>
+            <a href="#" class="active" routerLink="home/login">Login</a>
+        </nav>
+    </ng-template>
+    <ng-template ngxPermissionsOnly="admin">
+        <h2 class="logo">Admin</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" routerLink="admin/manage">Manage</a>
+            <a href="#" class="active" (click)="logOut()">sign out</a>
+        </nav>
+    </ng-template>
+    <ng-template ngxPermissionsOnly="manager">
+        <h2 class="logo">Manager</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Service</a>
+            <a href="#" class="active" (click)="logOut()">sign out</a>
+        </nav>
+    </ng-template>
+    <ng-template ngxPermissionsOnly="user">
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Service</a>
+            <a href="#" class="active" (click)="logOut()">sign out</a>
+        </nav>
+    </ng-template>
+</header>
+
+<body>
+    <div class="wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</body>
+
+</html>

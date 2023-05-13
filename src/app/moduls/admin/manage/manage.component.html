@@ -1,0 +1,24 @@
+<br><br><br><br><br><br>
+<table class="table" className="container">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Create By</th>
+            <th scope="col">Manage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listUser ;  let i = index">
+            <th scope="row">{{item.userid}}</th>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.nickname}}</td>
+            <td>
+                <button class="btn btn-danger btn-xs"(click)="onDelete(item)">Delete</button>
+                <button class="btn btn-warning btn-xs"(click)="onGetUser(item)"> Edit </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
