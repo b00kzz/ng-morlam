@@ -32,7 +32,7 @@ export class SignUpComponent {
 
   }
   onSubmit() {
-    const userDTO: any = this.signUpForm.value as signUp;
+    const userDTO: signUp = this.signUpForm.value as signUp;
 
     Swal.fire({
       title: 'ต้องการยืนยันการลงทะเบียน?',
@@ -45,18 +45,24 @@ export class SignUpComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log(userDTO);
-        if(userDTO.username == null || userDTO.password == null || userDTO.nickname == null || userDTO.email == null){
-          Swal.fire('ออะอ่อะ!', 'Sign Up failed.', 'success');
-          this.router.navigate(['home/signup']).then(() => {
-            window.location.reload()
-          });
-        }
-        this.homeService.signUp(userDTO.username, userDTO.password, userDTO.nickname, userDTO.email).then ((res:any) => {
-          if (res != null) {
-            Swal.fire('ออะอ่อะ!', 'Your file has been success.', 'success');
-            this.router.navigate(['home/login']).then(() => {
-              window.location.reload()
-            });
+        this.homeService.signUp(userDTO.username, userDTO.password, userDTO.nickname, userDTO.email).then((res: any) => {
+          if (res) {
+            Swal.fire({
+              icon: 'success',
+              title: 'บันทึกข้อมูลสำเร็จ',
+              text: '',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['home']);
+              }
+            })
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'กรุณาลองใหม่อีกครั้ง',
+              text: 'มี User นี้แล้ว',
+            })
           }
         })
       }

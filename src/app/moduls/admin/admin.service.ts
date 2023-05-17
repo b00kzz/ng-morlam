@@ -39,7 +39,6 @@ export class AdminService {
 
   updateUser(userid: any, user: any): Observable<any> {
     const body = JSON.stringify(user);
-
     return this.http.put<any>(API_ENDPOINT.concat('/user/' + userid), body, httpOptions)
   }
 }
