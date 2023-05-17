@@ -23,7 +23,8 @@ export class SignUpComponent {
 
 
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private homeService: HomeService,
     private router: Router,
     private permissionsService: NgxPermissionsService) { }

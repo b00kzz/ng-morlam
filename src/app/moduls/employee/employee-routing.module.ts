@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeComponent } from './employee.component';
 import { TicketComponent } from './ticket/ticket.component';
-import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
+import { UpdateTicketComponent } from './updateticket/update-ticket.component';
 import { AddTicketComponent } from './add-ticket/add-ticket.component';
 
 const routes: Routes = [
@@ -13,10 +13,10 @@ const routes: Routes = [
   path: 'tickets',
   component: TicketComponent
 },{
-  path: 'update-ticket/:id',
+  path: 'ticket/:ticketid',
   component: UpdateTicketComponent
 },{
-  path: 'add-ticket',
+  path: 'addticket',
   component: AddTicketComponent
 }
 ];

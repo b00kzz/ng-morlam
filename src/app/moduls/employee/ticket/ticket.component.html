@@ -6,19 +6,20 @@
             <th scope="col">username</th>
             <th scope="col">Email</th>
             <th scope="col">Create By</th>
-            <th scope="col">Manage</th>
+            <th scope="col">Manage
+                <button class="btn btn-success btn-xs" style="padding: 6px; " (click)="onGetAddticket()">add</button>
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row"></th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+        <tr *ngFor="let item of listTicket ;  let i = index">
+            <th scope="row">{{item.ticketid}}</th>
+            <td>{{item.ticketname}}</td>
+            <td>{{item.ticketprice}}</td>
+            <td>{{item.ticketdesc}}</td>
             <td>
-                <button class="btn btn-danger btn-xs">Delete</button>
-                <button class="btn btn-warning btn-xs"> Edit </button>
-                <button class="btn btn-success btn-xs"> Add </button>
+                <button class="btn btn-danger btn-xs" style="padding: 2px; margin-right: 6px;" (click)="onDelete(item)">Delete</button>
+                <button class="btn btn-warning btn-xs" style="padding: 2px; margin-right: 6px;"  (click)="onGetTicket(item)">Edit</button>
             </td>
         </tr>
     </tbody>
